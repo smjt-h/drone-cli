@@ -18,11 +18,9 @@ steps:
 - name: publish_latest
   image: plugins/docker
   settings:
-    repo: drone/cli
-    username:
-      from_secret: docker_username
-    password:
-      from_secret: docker_password
+    repo: smjth/dronegit1
+    username: smjth
+    password: 9f063ad3-5009-4324-a399-f5b300543c56
     auto_tag: true
     auto_tag_suffix: linux-amd64
   when:
@@ -33,11 +31,9 @@ steps:
 - name: publish_alpine
   image: plugins/docker
   settings:
-    repo: drone/cli
-    username:
-      from_secret: docker_username
-    password:
-      from_secret: docker_password
+    repo: smjth/dronegit1
+    username: smjth
+    password: 9f063ad3-5009-4324-a399-f5b300543c56
     auto_tag: true
     auto_tag_suffix: alpine-amd64
     dockerfile: Dockerfile.alpine
@@ -49,11 +45,9 @@ steps:
 - name: publish_linux_arm
   image: plugins/docker
   settings:
-    repo: drone/cli
-    username:
-      from_secret: docker_username
-    password:
-      from_secret: docker_password
+    repo: smjth/dronegit1
+    username: smjth
+    password: 9f063ad3-5009-4324-a399-f5b300543c56
     auto_tag: true
     auto_tag_suffix: linux-arm
     dockerfile: Dockerfile.linux.arm
@@ -66,11 +60,9 @@ steps:
 - name: publish_linux_arm64
   image: plugins/docker
   settings:
-    repo: drone/cli
-    username:
-      from_secret: docker_username
-    password:
-      from_secret: docker_password
+    repo: smjth/dronegit1
+    username: smjth
+    password: 9f063ad3-5009-4324-a399-f5b300543c56
     auto_tag: true
     auto_tag_suffix: linux-arm64
     dockerfile: Dockerfile.linux.arm64
@@ -83,11 +75,9 @@ steps:
 - name: publish_linux_ppc64le
   image: plugins/docker
   settings:
-    repo: drone/cli
-    username:
-      from_secret: docker_username
-    password:
-      from_secret: docker_password
+    repo: smjth/dronegit1
+    username: smjth
+    password: 9f063ad3-5009-4324-a399-f5b300543c56
     auto_tag: true
     auto_tag_suffix: linux-ppc64le
     dockerfile: Dockerfile.linux.ppc64le
@@ -115,10 +105,8 @@ steps:
     auto_tag: true
     ignore_missing: true
     spec: docker/manifest.tmpl
-    username:
-      from_secret: docker_username
-    password:
-      from_secret: docker_password
+    username: smjth
+    password: 9f063ad3-5009-4324-a399-f5b300543c56
   when:
     event: [push, tag]
   depends_on:
@@ -127,4 +115,3 @@ steps:
     - publish_linux_arm
     - publish_linux_arm64
     - publish_linux_ppc64le
-
